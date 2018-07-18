@@ -13,6 +13,16 @@ $ git clone https://github.com/tchellomello/pulp3-docker.git
 ```bash
 $ cd pulp3-docker
 $ docker-compose -p pulpv3 up
+
+$ docker ps 
+CONTAINER ID        IMAGE                              COMMAND                  CREATED             STATUS              PORTS                                        NAMES
+4e2d2e44dd63        tchellomello/pulp-web:nightly      "/nightly/docker-ent…"   12 seconds ago      Up 10 seconds       0.0.0.0:8000->8000/tcp                       pulpv3_pulp_web_1
+67ad6fc825e4        tchellomello/pulp-worker:nightly   "/nightly/docker-ent…"   8 minutes ago       Up 11 seconds                                                    pulpv3_worker_1
+2b61a699f734        tchellomello/pulp-worker:nightly   "/nightly/docker-ent…"   8 minutes ago       Up 12 seconds                                                    pulpv3_resource_manager_1
+6871baf88fd6        postgres:latest                    "docker-entrypoint.s…"   8 minutes ago       Up 14 seconds       0.0.0.0:5432->5432/tcp                       pulpv3_pgsql_1
+48409f19a154        redis:4-alpine                     "docker-entrypoint.s…"   8 minutes ago       Up 13 seconds       0.0.0.0:6379->6379/tcp                       pulpv3_redis_1
+7ea97cdfb7b9        traefik:latest                     "/traefik --defaulte…"   8 minutes ago       Up 15 seconds       0.0.0.0:80->80/tcp, 0.0.0.0:8080->8080/tcp   pulpv3_reverse_proxy_1
+
 ```
 ** To test, open a console to one running worker
 ```bash
