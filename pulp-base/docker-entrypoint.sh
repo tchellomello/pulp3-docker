@@ -5,7 +5,7 @@ if [ -f "${FIRST_RUN}" ]; then
     # append SECRET_KEY to server.yaml
     if [ -f "$PULP_SETTINGS" ]; then
         hash=$(cat /dev/urandom | tr -dc 'a-z0-9!@#$%^&*(\-_=+)' | head -c 50)
-        echo "SECRET_KEY: $hash" >> ${PULP_SETTINGS}
+        echo "SECRET_KEY: '$hash'" >> ${PULP_SETTINGS}
     fi
 
     # set debug preferences
