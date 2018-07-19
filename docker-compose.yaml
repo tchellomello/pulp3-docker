@@ -87,7 +87,7 @@ services:
     networks: 
       - pulp_net
 
-  pulp_web:
+  web:
     depends_on:
       - worker
     image: tchellomello/pulp-web:nightly
